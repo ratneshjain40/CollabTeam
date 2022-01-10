@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 
 const cookieSession = require("cookie-session");
-const session = require("express-session");
 
 const passport = require("passport");
 
@@ -16,19 +15,10 @@ app.use(
     keys: [process.env.SECRET],
     secret: process.env.SECRET,
     maxAge: 1000 * 60 * 60 * 24,
+    sameSite: "lax",
+    httpOnly: true,
   })
 );
-
-//app.use(
-//  session({
-//    secret: process.env.SECRET,
-//    resave: false,
-//    saveUninitialized: true,
-//    cookie: {
-//      maxAge: 1000 * 60 * 60 * 24,
-//    },
-//  })
-//);
 
 app.use(passport.initialize());
 app.use(passport.session());

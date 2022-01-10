@@ -1,8 +1,9 @@
 const router = require("express").Router();
+const isAuth = require("./verifyAuth").isAuth;
 const passport = require("passport");
 
-router.get("/", (req, res) => {
-  console.log(req.session);
+router.get("/", isAuth, (req, res) => {
+  console.log(req.isAuthenticated());
   res.send(`Hello world ${req.user.username}`);
 });
 

@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Manrope", sans-serif;
+  color: #5f6368;
+}
+
+.header {
+  height: 7vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  margin-right: auto;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  font-size: 1rem;
+}
+
+.header-text {
+  text-align: center;
+}
+
+.header-item:hover {
+  background-color: #dddddd;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  height: 93vh;
+  width: 100%;
+}
+
+.container_sidebar {
+  min-height: 100%;
+  flex: 0.12;
+  background-color: #bbbbbb;
+  border-right: 1px solid #c0c0c0;
+}
+
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.list-item {
+  list-style: none;
+  font-size: 1rem;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.list-item:hover {
+  background-color: #dddddd;
+  cursor: pointer;
+}
+
+.list-item-active {
+  background-color: #dddddd;
+}
+
+.list-text {
+  text-align: center;
+}
+
+.container_main {
+  /* Take the remaining width */
+  flex: 1;
+  display: flex;
+}
+
+.content-center {
+  margin: auto;
+  font-size: 1rem;
+}

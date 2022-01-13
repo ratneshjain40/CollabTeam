@@ -7,9 +7,12 @@ const cors = require("cors");
 require("./auth/passport");
 const AuthRoutes = require("./auth/routes");
 const ApiRoutes = require("./api/routes");
+const ApplicationRoutes = require("./app/routes");
 
 //<----------------- Middleware ----------------->
-app.use(cors({ credentials: true, origin: "https://localhost:3000" }));
+app.use(express.static("./public"));
+
+app.use(cors({ credentials: true, origin: "https://localhost:5000" }));
 app.use(
   cookieSession({
     keys: [process.env.SECRET],
@@ -22,7 +25,9 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(AuthRoutes);
+app.use(ApplicationRoutes);
 app.use(ApiRoutes);
 
 //<----------------- Run ----------------->
